@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\v1\CategoryController;
 use App\Http\Controllers\Api\v1\WelcomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', WelcomeController::class);
+
+Route::apiResource('category', CategoryController::class);
