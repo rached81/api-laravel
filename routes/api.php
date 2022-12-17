@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\v1\CategoryController;
 use App\Http\Controllers\Api\v1\WelcomeController;
+use App\Services\Category\CategoryServices;
+use App\Services\Tools\PDFFormat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +25,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', WelcomeController::class);
 
+Route::get('/category/report-pdf', [CategoryController::class, 'generateReportPDF'])->name('category.report-pdf');
 Route::apiResource('category', CategoryController::class);
